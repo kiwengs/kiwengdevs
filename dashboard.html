@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistem Zakat Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="tampilan/view.css">
+</head>
+<body>
+    <div class="gyro-container">
+        <div class="gyro-bg" id="gyro"></div>
+        <div class="background">
+        </div>
+    </div>
+
+
+<header class="header">
+    <h1>Sistem Zakat Online</h1>
+</header>
+
+<nav id="menu">
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('info')">Penjelasan</button>
+    <button onclick="show('berita')">Berita</button>
+    <button onclick="show('zakat')">Hitung Zakat</button>
+    <button onclick="show('bayar')">Pembayaran</button>
+    <button onclick="show('invoice')">Invoice</button>
+    <button onclick="show('penyaluran')">Penyaluran Dana</button>
+    <button onclick="logout()" style="background:#c62828">
+        Logout
+    </button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+    <div class="hero">
+        <div class="hero-text">
+            <h5>SELAMAT DATANG DI</h5>
+            <h1>SISTEM ZAKAT<br>ONLINE</h1>
+            <p>
+                Platform digital untuk membantu umat Muslim
+                menghitung dan membayar zakat secara mudah.
+            </p>
+
+            <div class="hero-action">
+                <input type="number" placeholder="Masukkan penghasilan (Rp)">
+                <button onclick="show('zakat')">HITUNG ZAKAT</button>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <img src="data:image/jpeg;base64,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">
+        </div>
+    </div>
+</section>
+
+
+<section id="info">
+    <div class="card">
+        <h2>Penjelasan Zakat</h2>
+        <p>Zakat penghasilan adalah zakat yang wajib dikeluarkan dari pendapatan seseorang yang diperoleh melalui pekerjaan atau profesi yang halal, seperti gaji, honor, upah, atau pendapatan jasa lainnya.
+
+            Zakat ini dikenakan apabila penghasilan yang diterima telah mencapai nisab, yaitu setara dengan 85 gram emas, dan dikeluarkan sebesar 2,5% dari total penghasilan bersih.
+            
+            Zakat penghasilan dapat dibayarkan secara bulanan atau tahunan, sesuai dengan kemudahan dan kemampuan muzakki. Pembayaran zakat ini bertujuan untuk membersihkan harta, menumbuhkan keberkahan rezeki, serta membantu kesejahteraan mustahik (penerima zakat).
+            
+            Dengan menunaikan zakat penghasilan, seorang muslim telah menjalankan kewajiban agama sekaligus berkontribusi dalam pemerataan ekonomi dan kepedulian sosial.</p>
+    </div>
+</section>
+
+<section id="zakat">
+    <div class="card">
+        <h2>Perhitungan Zakat</h2>
+        <input type="number" id="penghasilan" placeholder="Penghasilan per bulan">
+        <button class="primary" onclick="hitungZakat()">Hitung</button>
+        <p id="hasilZakat"></p>
+    </div>
+</section>
+
+<section id="berita">
+    <div class="card">
+        <h2>📰 Berita Zakat</h2>
+        <div id="beritaList"></div>
+    </div>
+</section>
+
+
+
+<section id="bayar">
+    <div class="card">
+        <h2>Pembayaran</h2>
+        <select id="metode">
+            <option>Transfer Bank</option>
+            <option>QRIS</option>
+            <option>E-Wallet</option>
+        </select>
+        <button class="primary" onclick="bayar()">Bayar</button>
+    </div>
+</section>
+
+<section id="invoice">
+    
+    <div class="card-invoice">
+        <h2>Invoice</h2>
+        <p id="invNama"></p>
+        <p id="invJumlah"></p>
+        <p id="invMetode"></p>
+
+        <button class="primary" onclick="downloadInvoice()">
+            Download Invoice (PDF)
+        </button>
+        
+    </div>
+</section>
+
+
+<section id="penyaluran">
+    <div class="card">
+        <h2>📊 Laporan Penyaluran Dana Zakat</h2>
+
+        <p><b>Total Dana Terkumpul:</b></p>
+        <h3 style="color:#2e7d32">Rp 25.000.000</h3>
+
+        <hr>
+
+        <h4>Alokasi Dana</h4>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Program</th>
+                    <th>Persentase</th>
+                    <th>Jumlah</th>
+                </tr>
+            </thead>
+            <tbody id="tabelPenyaluran">
+                <!-- DATA DARI DATABASE -->
+            </tbody>
+        </table>
+        
+
+        <p style="margin-top:15px">
+            ✅ Semua penyaluran dilakukan secara transparan dan dapat dipertanggungjawabkan.
+        </p>
+    </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/sistem.js"></script>
+<script>loadPenyaluranDashboard();</script>
+<script src="tampilan/view.js"></script>
+<script> const role = localStorage.getItem("role");
+    if (!role || role !== "user") {
+        alert("Akses ditolak");
+        window.location.href = "index.html";
+    }
+    </script>
+
+<script> loadBeritaUser(); </script>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+
+        <div class="footer-contact">
+            <h4>Kontak Kami</h4>
+            <p>Email: kevindwisaputro555@gmail.com</p>
+            <p>WhatsApp: 089604221616</p>
+
+            <!-- TOMBOL CHAT WA -->
+            <a
+                href="https://wa.me/6289604221616"
+                target="_blank"
+                class="wa-button"
+            >
+                💬 Chat WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Sistem Zakat Online
+    </div>
+</footer>
+
+</body>
+</html>

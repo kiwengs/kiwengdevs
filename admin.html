@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - Sistem Zakat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tampilan/admin.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="admin-header">
+    <h2>Admin Panel</h2>
+    <button class="logout" onclick="logout()">Logout</button>
+</header>
+
+<!-- NAV -->
+<nav class="admin-nav">
+    <button id="btnBerita" class="active" onclick="setMode('berita')">
+        Kelola Berita
+    </button>
+    <button id="btnPenyaluran" onclick="setMode('penyaluran')">
+        Penyaluran Dana
+    </button>
+</nav>
+
+<!-- CONTENT -->
+<main class="admin-content">
+
+    <!-- ===== MODE BERITA ===== -->
+    <section id="beritaSection" class="section active">
+        <h3>Kelola Berita</h3>
+
+        <div class="card">
+            <label>Judul Berita</label>
+            <input id="judul" placeholder="Contoh: Penyaluran Zakat Bulan Ramadhan">
+
+            <label>Isi Berita</label>
+            <textarea id="isi" placeholder="Tulis isi berita secara lengkap..."></textarea>
+
+            <button id="btnSimpanBerita" class="primary" onclick="tambahBerita()">
+                Simpan Berita
+            </button>
+            
+        </div>
+
+        <div id="listBerita" class="list"></div>
+    </section>
+
+    <!-- ===== MODE PENYALURAN ===== -->
+    <section id="penyaluranSection" class="section">
+        <h3>Penyaluran Dana</h3>
+
+        <div class="card">
+            <label>Nama Program</label>
+            <input id="program" placeholder="Contoh: Bantuan Fakir Miskin">
+
+            <div class="row">
+                <div>
+                    <label>Persentase (%)</label>
+                    <input id="persentase" type="number">
+                </div>
+                <div>
+                    <label>Jumlah Dana</label>
+                    <input id="jumlah" type="number">
+                </div>
+            </div>
+
+            <button class="primary" onclick="tambahPenyaluran()">Simpan Penyaluran</button>
+        </div>
+
+        <div id="listPenyaluran" class="list"></div>
+    </section>
+
+</main>
+
+<script src="js/admin.js"></script>
+<script>
+  
+    
+    </script>
+    
+</body>
+</html>

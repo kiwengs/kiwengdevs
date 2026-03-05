@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Zakat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="tampilan/view.css">
+</head>
+<body>
+    <div class="gyro-container">
+        <div class="gyro-bg" id="gyro"></div>
+    </div>
+
+<header class="header">
+    <h1>Website Zakat</h1>
+    <p>Hitung, Bayar, dan ketahui penyaluran Zakat</p>
+</header>
+
+<section class="active">
+    <div class="card">
+        <h2>Login</h2>
+        <input id="user" placeholder="Username">
+        <input id="pass" type="password" placeholder="Password">
+
+        <button class="primary" onclick="login()">Login</button>
+
+        <button class="primary" style="margin-top:10px; background:#1976d2"
+                onclick="showRegister()">Register
+        </button>
+    </div>
+</section>
+
+<!-- FORM REGISTER -->
+<section id="register">
+    <div class="card">
+        <h2>Register</h2>
+        <input id="regUser" placeholder="Username">
+        <input id="regPass" type="password" placeholder="Password">
+
+        <button class="primary" onclick="register()">Daftar</button>
+
+        <button class="primary" style="margin-top:10px; background:#1976d2" onclick="showLogin()">
+            Kembali ke Login
+        </button>
+    </div>
+</section>
+
+
+<script src="js/sistem.js"></script>
+
+
+</body>
+</html>
